@@ -47,6 +47,13 @@ require_once __DIR__ . '/../includes/auth-check.php';
           <div class="dash-desc">Rules for your screen time bonus during school breaks.</div>
         </div>
       </a>
+      <a class="dash-card magenta" href="pages/main/moms-time.php">
+        <div class="dash-icon icon-bg">🌙</div>
+        <div>
+          <div class="dash-label txt-color">Mom's Time</div>
+          <div class="dash-desc">When Mom asks for two hours of quiet time and your reward for respecting it.</div>
+        </div>
+      </a>
       <a class="dash-card green" href="pages/main/chores-table.php">
         <div class="dash-icon icon-bg">📋</div>
         <div>

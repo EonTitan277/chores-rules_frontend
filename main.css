@@ -435,12 +435,13 @@ a:hover {
   font-weight: 800;
   font-size: 0.95rem;
 }
-.badge-blue   { background: #dbeafe; color: var(--blue); }
-.badge-green  { background: #dcfce7; color: #16a34a; }
-.badge-yellow { background: #fef9c3; color: #b45309; }
-.badge-red    { background: #fee2e2; color: var(--red); }
-.badge-orange { background: #ffedd5; color: #c2410c; }
-.badge-purple { background: #eedaff; color: var(--purple); }
+.badge-blue    { background: #dbeafe; color: var(--blue); }
+.badge-green   { background: #dcfce7; color: #16a34a; }
+.badge-yellow  { background: #fef9c3; color: #b45309; }
+.badge-red     { background: #fee2e2; color: var(--red); }
+.badge-orange  { background: #ffedd5; color: #c2410c; }
+.badge-purple  { background: #eedaff; color: var(--purple); }
+.badge-magenta { background: #e9d5e0; color: #c7357e; }
 
 /* ── DIVIDER ── */
 .divider {
