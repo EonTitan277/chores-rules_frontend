@@ -1,0 +1,56 @@
+.dash-grid {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.dash-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 22px 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    text-decoration: none;
+    color: var(--text);
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+.dash-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(0,0,0,0.11);
+}
+.dash-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+.dash-label {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+.dash-desc {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.45;
+}
+
+/* ── LOGOUT BUTTON ── */
+#dash-logout {
+    position: relative;
+    top: 1.8rem;
+    display: block;
+    margin: 16px auto 0;
+    padding: 10px 26px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    font-size: 1rem;
+}

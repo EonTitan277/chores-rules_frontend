@@ -1,0 +1,126 @@
+/* ── QUICK REFERENCE TABLE ── */
+.quick-ref {
+    max-width: 720px;
+    margin: 0 auto 40px;
+    scroll-margin-top: 12px;
+}
+.quick-ref table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.05rem;
+    background: var(--card);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+.quick-ref th {
+    background: #1e293b;
+    color: #fff;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 700;
+}
+.quick-ref th:first-child { border-radius: 12px 0 0 0; text-align: center; width: 60px; }
+.quick-ref th:last-child  { border-radius: 0 12px 0 0; text-align: center; width: 100px; }
+.quick-ref td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: middle;
+}
+.quick-ref tr:nth-child(even of .chore-row) td { background: #f8fafc; }
+.quick-ref tr:last-child td { border-bottom: none; }
+.quick-ref tr:last-child td:first-child { border-radius: 0 0 0 12px; }
+.quick-ref tr:last-child td:last-child  { border-radius: 0 0 12px 0; }
+
+/* ── SUB-SECTION HEADER ROWS ── */
+.quick-ref tr td.sub-header {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1rem;
+    padding: 8px 16px;
+    background: #e9eef7;
+    color: var(--blue);
+}
+
+/* ── CUSTOM TABLE ELEMENTS ── */
+.num-col {
+    text-align: center;
+    font-weight: 900;
+    color: var(--muted);
+    font-size: 1.1rem;
+}
+
+[contenteditable="true"]:focus {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.05rem;
+    background: 0;
+    color: var(--text);
+    border-radius: 6px;
+}
+.blue tr:focus, .blue [contenteditable="true"]:focus {
+    outline: dashed #3b82f685 2px;
+    outline-offset: -2px;
+}
+.purple tr:focus, .purple [contenteditable="true"]:focus {
+    outline: dashed #9147d685 2px;
+    outline-offset: -2px;
+}
+.yellow tr:focus, .yellow [contenteditable="true"]:focus {
+    outline: dashed #bb8c0a85 2px;
+    outline-offset: -2px;
+}
+
+input[type=checkbox] {
+    appearance: none;
+    display: grid;
+    place-content: center;
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    margin: 0 auto;
+    border-radius: 8px;
+    outline: 3px solid #cbd5e1;
+    outline-offset: -2px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, outline-color 0.15s ease;
+}
+input[type=checkbox]::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    scale: 0;
+    transition: scale 0.15s ease-in-out;
+    box-shadow: inset 14px 14px #22c55e;
+    transform-origin: center;
+    clip-path: polygon(14% 44%, 0 60%, 50% 100%, 100% 16%, 86% 0, 42% 62%);
+}
+input[type=checkbox]:checked {
+    background: #f0fdf4;
+    outline-color: #22c55e;
+}
+input[type=checkbox]:checked::before {
+    scale: 1;
+}
+input[type=checkbox].restricted {
+    pointer-events: auto;
+}
+
+.reset-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #d31841;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: background-color 0.2s ease;
+}
+.reset-button:hover {
+  background-color: #b01436;
+  transform: translateY(-1px);
+}
+.reset-button:active {
+  transform: translateY(0);
+}
