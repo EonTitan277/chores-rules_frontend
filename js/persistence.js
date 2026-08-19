@@ -98,7 +98,7 @@ async function fetchCurrentUserRole() {
   }
 
   const result = await response.json();
-  if (!result || !['kid', 'admin'].includes(result.role)) {
+  if (!result || !['kid', 'admin', 'readonly'].includes(result.role)) {
     throw new Error('Role response was invalid');
   }
   return result.role;
@@ -106,20 +106,23 @@ async function fetchCurrentUserRole() {
 
 function applyRoleRestrictions(role) {
   const isKid = role === 'kid';
+  const isReadOnly = role === 'readonly';
 
   document.querySelectorAll('td[data-key]').forEach((element) => {
-    element.contentEditable = isKid ? 'false' : 'true';
+    element.contentEditable = isKid || isReadOnly ? 'false' : 'true';
   });
 
-  document.querySelectorAll('input[type="checkbox"].restricted[data-key]').forEach((checkbox) => {
-    if (isKid) {
-      checkbox.style.pointerEvents = 'none';
-      checkbox.setAttribute('aria-disabled', 'true');
-    } else {
-      checkbox.style.pointerEvents = '';
-      checkbox.removeAttribute('aria-disabled');
-    }
+  document.querySelectorAll('input[type="checkbox"][data-key]').forEach((checkbox) => {
+    const restrictedForKid = isKid && checkbox.classList.contains('restricted');
+    checkbox.disabled = isReadOnly || restrictedForKid;
+    checkbox.setAttribute('aria-disabled', checkbox.disabled ? 'true' : 'false');
   });
+
+  const resetButton = document.querySelector('.reset-button');
+  if (resetButton) {
+    resetButton.disabled = isReadOnly;
+    resetButton.hidden = isReadOnly;
+  }
 }
 
 async function loadCurrentUserRole() {
@@ -226,6 +229,10 @@ const scheduleTextSave = createDebouncedSaver(TEXT_STATES_URL, 1000);
 
 // Keep the existing reset button working with the Phase 7 single-key PUT API.
 async function resetAllCheckboxes() {
+  if (currentUserRole === 'readonly') {
+    return;
+  }
+
   if (!confirm('Are you sure you want to reset all checkboxes? This action cannot be undone.')) {
     return;
   }
@@ -268,7 +275,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('change', (event) => {
     const checkbox = event.target.closest('input[type="checkbox"][data-key]');
-    if (checkbox && !(currentUserRole === 'kid' && checkbox.classList.contains('restricted'))) {
+    if (checkbox && currentUserRole !== 'readonly'
+        && !(currentUserRole === 'kid' && checkbox.classList.contains('restricted'))) {
       window.checkboxState[checkbox.dataset.key] = checkbox.checked;
       document.dispatchEvent(new CustomEvent('persistence:state-changed'));
       scheduleCheckboxSave(checkbox.dataset.key, checkbox.checked);
@@ -277,7 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('input', (event) => {
     const editable = event.target.closest('[contenteditable][data-key]');
-    if (editable && currentUserRole !== 'kid') {
+    if (editable && currentUserRole === 'admin') {
       window.textState[editable.dataset.key] = editable.textContent;
       document.dispatchEvent(new CustomEvent('persistence:state-changed'));
       scheduleTextSave(editable.dataset.key, editable.textContent);
