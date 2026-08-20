@@ -31,6 +31,12 @@ require_once __DIR__ . '/../../../includes/auth-check.php';
     <strong>But here’s the important part:</strong> if the same bad behavior keeps happening, the consequence might get bigger each time. And if behavior still does not improve, adding more than one consequence will have to be considered.
   </div>
 
+  <div class="note-box">
+    <strong>Chores still continue during a consequence.</strong><br>
+    If you choose to stop doing your chores during a lengthy consequence, that consequence will remain in effect until you start trying to do them again for at least <strong>5 days</strong>.<br>
+    If you can't complete them all during this time, <strong>that is okay</strong>. You only need to demonstrate that you are trying to do your best to help out around the house and it will count towards ending the consequence.
+  </div>
+
   <div id="mild-consequences" class="quick-ref yellow">
     <div class="section-header">
       <div class="section-icon icon-bg">⚠️</div>

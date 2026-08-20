@@ -58,6 +58,15 @@ require_once __DIR__ . '/../../../includes/auth-check.php';
           <div>Finishing <strong>all 22 total quests</strong> is <em>always</em> the goal — and doing so comes with a special reward! (See <a href="#Section3">Section 3</a> and <a href="#Section5">5</a>.)</div>
         </li>
       </ul>
+
+      <div class="note-box">
+        <div class="note-title">⚠️ A note about chores and long consequences.</div>
+        <p style="font-size:0.95rem; line-height:1.65;">
+          <strong>Chores still continue during a consequence.</strong><br>
+          If you choose to stop doing your chores during a lengthy consequence, that consequence will remain in effect until you start trying to do them again for at least <strong>5 days</strong>.<br>
+          If you can't complete them all during this time, <strong>that is okay</strong>. You only need to demonstrate that you are trying to do your best to help out around the house and it will count towards ending the consequence.
+        </p>
+      </div>
     </div>
   </div>
 
@@ -100,7 +109,7 @@ require_once __DIR__ . '/../../../includes/auth-check.php';
       </ul>
 
       <div class="note-box">
-        <div class="note-title">📌 A Note About Things Outside Your Control</div>
+        <div class="note-title">📌 A note about things outside your control.</div>
         <p style="font-size:0.95rem; line-height:1.65;">
           <strong>Sometimes things happen that are outside your control.</strong> If something beyond your
           control kept you from finishing your required chores, your mother can handle it one of two
@@ -253,7 +262,7 @@ require_once __DIR__ . '/../../../includes/auth-check.php';
           <div class="rule-num">4</div>
           <div><strong>What counts as a real emergency?</strong> The examples below are not the only emergencies that exist, and this list does not limit what counts as one. Use your best judgment. When in doubt, ask yourself: <em>“Could someone get seriously hurt, or could something get seriously damaged if I wait until morning?”</em> If yes, that is likely an emergency.
             <div class="note-box mom-box">
-              <div class="note-title">🚨 Examples of Real Emergencies</div>
+              <div class="note-title">🚨 Examples of real emergencies.</div>
               <div class="note-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
                 <div class="note-item"><span>🔥</span> There is a fire or smoke in the house</div>
                 <div class="note-item"><span>🩸</span> Someone is badly hurt and/or bleeding</div>
@@ -324,7 +333,7 @@ require_once __DIR__ . '/../../../includes/auth-check.php';
       </ul>
 
       <div class="note-box">
-        <div class="note-title">📌 What Is Being Too Sick?</div>
+        <div class="note-title">📌 What is being too sick?</div>
         <p style="font-size:0.95rem; line-height:1.65;">
           <em>The examples below are not the only illnesses considered <strong>too sick</strong>, and this list does not limit what counts as "too sick".</em>
           <br>

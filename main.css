@@ -313,7 +313,7 @@ header p.subtitle {
 .section {
   max-width: 720px;
   margin: 0 auto 32px;
-  scroll-margin-top: 14px;
+  scroll-margin-top: 74px;
 }
 .section-header {
   display: flex;
@@ -566,7 +566,7 @@ a:hover {
 .magenta .note-box .note-title {
   font-family: 'Fredoka One', cursive;
   color: #be185d;
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-bottom: 10px;
 }
 
